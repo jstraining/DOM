@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple example</title>
+    <script>
+        function showChildrens (nodesArr) {
+            alert('This is Node first child ' + '\n' + nodesArr.firstChild);
+            alert('This is Node last child ' + '\n' + nodesArr.lastChild);
+        }
+
+        function showParent (nodeArr) {
+            alert(nodeArr.parentNode);
+        }
+
+        function showSibling (nodeArr) {
+            alert(nodeArr.nextSibling.nextSibling.attributes[0].nodeValue);
+            alert(nodeArr.previousSibling.previousSibling.attributes[0].nodeValue);
+        }
+    </script>
+</head>
+<body>
+<p id="prev"></p>
+<div>
+    <button onclick="showChildrens(document.getElementsByTagName('div')[0])">showLastFirstChildren</button>
+    <button onclick="showParent(document.getElementsByTagName('div')[0])">showParent</button>
+    <button onclick="showSibling(document.getElementsByTagName('div')[0])">showSibling</button>
+</div>
+<p id="next"></p>
+</body>
+</html>

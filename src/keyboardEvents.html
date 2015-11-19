@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head><title>Simple example</title></head>
+<body>
+<div id="element">
+    <input type="text" onkeydown="createBlock()">onkeydown</input>
+    <input type="text" onkeyup="createBlock()">onkeyup</input>
+    <input type="text" onkeypress="createBlock()">onkeypress</input>
+    <input type="button" onclick="createBlock()">onkeypress</input>
+</div>
+<div id="demo"></div>
+<script>
+    var counter = 1;
+    function createBlock () {
+        var el = document.getElementById('demo');
+
+        var onClickEl = document.createElement('div');
+        onClickEl.innerHTML = counter;
+        onClickEl.style.height = '50px';
+        onClickEl.style.cursor = 'pointer';
+        onClickEl.style.width = '50px';
+        onClickEl.style.borderStyle = 'double';
+        onClickEl.style.display = 'inline-block';
+        onClickEl.addEventListener('click', removing);
+        el.appendChild(onClickEl);
+        counter++;
+    }
+
+    function removing (e) {
+        var el = document.getElementById('demo');
+        //you can use this to remove current el or e.currentTarget
+        el.removeChild(e.currentTarget);
+        console.log(this);
+    }
+</script>
+</body>
+</html>

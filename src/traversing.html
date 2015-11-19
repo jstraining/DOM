@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple example</title>
+    <script>
+        function showNodes (nodesArr) {
+            var mainDiv = nodesArr;
+
+            for (var index = 0; index < mainDiv.length; index++) {
+                alert('This is Node with index ' + index + '\n' + mainDiv[index]);
+                alert('This is inner HTML of Node with index ' + index +'\n' + mainDiv[index].innerHTML);
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <p id="example">
+        Click on button bellow!
+    </p>
+
+    <ul>
+        <li>value 1</li>
+        <li>value 2</li>
+        <li>value 3</li>
+    </ul>
+
+    <button onclick="showNodes(document.getElementsByTagName('div')[0].children)">showChildren</button>
+    <button onclick="showNodes(document.getElementsByTagName('div')[0].childNodes)">showChildNodes</button>
+</div>
+</body>
+</html>

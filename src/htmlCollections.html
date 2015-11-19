@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple example</title>
+</head>
+<body>
+<div id="element">
+    <a href="https://google.com">google</a><hr/>
+    <a href="https://yandex.ru">yandex</a><hr/>
+    <p id="result"></p>
+    <p id="links"></p>
+    <script>
+        document.getElementById('result').innerHTML =
+                'There is ' + document.links.length + ' links on the page';
+
+        document.getElementById('links').innerHTML =
+                document.links[0] + ' ' + document.links[1];
+
+    </script>
+    <!--
+    Also you can get
+        document.anchors - return all a tags with name attribute
+        document.body - return body element
+        document.documentElement - return document element
+        document.embeds - return all embed elements
+        document.forms - return all form elements
+        document.head - return head element
+        document.images - return all image elements
+        document.scripts - return all script elements
+        document.title - return title
+    in the same way.
+    -->
+</div>
+</body>
+</html>

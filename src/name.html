@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Simple example</title>
+    <script>
+        "use strict";
+
+        function changeElementsColorByName(name, color) {
+            var elements = document.getElementsByName(name);
+            [].forEach.call(elements, function (element) {
+                element.style.backgroundColor = color;
+            });
+        }
+    </script>
+</head>
+<body>
+<div id="element">
+    <input type="button" onclick="changeElementsColorByName('red-button', 'red')" value="change color">
+</div>
+
+<div>
+    <button name="red-button">Click me</button>
+    <button>Click me</button>
+    <button name="red-button">Click me</button>
+    <button>Click me</button>
+</div>
+</body>
+</html>

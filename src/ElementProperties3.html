@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple example</title>
+</head>
+<body>
+<div id="example">
+</div>
+<script>
+    var el = document.getElementById('example');
+    //attributes return NamedNodeMap with array of attributes
+    console.log('attributes result');
+    console.log(el.attributes);
+    //empty obj in case of any attributes
+    console.log('attributes result for el without attr');
+    console.log(document.body.attributes);
+    //getAttribute() return attribute value by attribute name
+    console.log('getAttribute() result ' + el.getAttribute('id'));
+    //getAttributeNode return Attribute node
+    console.log('getAttributeNode() result ');
+    console.log(el.getAttributeNode('id'));
+    var idAttr = el.getAttributeNode('id');
+    //removeAttribute attribute by attr name
+    el.removeAttribute('id');
+    //hasAttribute return true if attr present, otherwise false
+    console.log('Is attr present after removing = ' + el.hasAttribute('id'));
+    //setAttribute to element, needs attrNode as param
+    el.setAttributeNode(idAttr);
+    console.log('Is attr present after adding = ' + el.hasAttribute('id'));
+    //removeAttributeNode remove attr, needs attrNode as param
+    el.removeAttributeNode(idAttr);
+    console.log('Is attr present after removing = ' + el.hasAttribute('id'));
+    //setAttribute to element. needs name and value of attr as params
+    el.setAttribute('id', 'example');
+    console.log('Is attr present after adding = ' + el.hasAttribute('id'));
+    //hasAttributes return true if any attr is present
+    console.log('Result of hasAttributes() for el with attr ' + el.hasAttributes());
+    console.log('Result of hasAttributes() for el without attr ' + document.body.hasAttributes());
+</script>
+</body>
+</html>

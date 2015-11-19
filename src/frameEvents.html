@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head><title>Simple example</title></head>
+<body onload="start()" onresize="onRes()">
+<div id="element">
+</div>
+<div id="demo">
+    <p id="result" style="padding-bottom: 15px"></p>
+
+    <div id="scroll" onscroll="count()"
+         style="height: 100px;width: 100px;overflow: scroll;border:2px solid olivedrab;">
+        The HTML DOM is a standard object model and programming interface for HTML. It defines:
+    </div>
+</div>
+<script>
+    var counter = 0;
+    function start () {
+        alert('Page is loaded')
+    }
+
+    function onRes() {
+        var p = document.getElementById('result');
+        p.innerHTML = 'window height = ' + window.innerHeight + ' and window width = ' + window.innerWidth;
+    }
+
+    function count() {
+        var p = document.getElementById('result');
+        p.innerHTML = counter++;
+    }
+</script>
+</body>
+</html>

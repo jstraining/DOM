@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple example</title>
+    <script>
+        function findElementByCssSelector(cssSelector) {
+            var temp = document.querySelector(cssSelector);
+            if (temp) {
+                alert('Query selector ' + cssSelector + ' result: ' + temp);
+            }
+        }
+        function findElementsByCssSelector(cssSelector) {
+            var temp = document.querySelectorAll(cssSelector);
+            if (temp) {
+                [].forEach.call(temp, function (element) {
+                    alert('Query selectors ' + cssSelector + ' result: ' + element);
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="element">
+    <ul class="list">
+        <li id="first">First</li>
+        <li class="second">Second</li>
+    </ul>
+    <ul class="list">
+        <li>First</li>
+        <li>Second</li>
+    </ul>
+    <script>
+        findElementByCssSelector('div > ul');
+        findElementByCssSelector('div');
+        findElementByCssSelector('.list');
+        findElementsByCssSelector('ul.list');
+    </script>
+</div>
+</body>
+</html>

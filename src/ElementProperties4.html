@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head><title>Simple example</title></head>
+<body>
+<div id="example">
+    <p id="first">Green text</p>
+</div>
+<div id="temp" style="width: 300px;height: 300px;border-style: dotted;border-width: 5px 5px 5px 5px"></div>
+<script>
+    //using style property you can change any style property, like font-size, color, etc.
+    var exDiv = document.getElementById('example');
+    exDiv.style.backgroundColor = 'yellow';
+    exDiv.style.height = '200px';
+    exDiv.style.width = '200px';
+    exDiv.style.borderColor = 'black';
+    exDiv.style.borderStyle = 'double';
+    exDiv.style.borderWidth = '5px 5px 5px 5px';
+    // you can get tagName property
+    var el = document.createElement('p');
+    //you can set innerHTML of element by this property
+    el.innerHTML = exDiv.tagName;
+    //you can get innerHTML of element by this property
+    alert(exDiv.innerHTML);
+    exDiv.appendChild(el);
+    // you can use outerHTML to get or change HTML element and its descendants
+    alert(exDiv.outerHTML);
+    var temp = document.getElementById('temp');
+    temp.outerHTML = '<p>This one replace div</p>';
+    // nodeName, nodeType, nodeValue just for get these value and maybe compare
+    alert('Node name is ' + exDiv.nodeName);
+    // nodeTypes 1 - elementNode, 2 - attributeNode, 3 - textNode, 8 - comment node
+    // detailed info here http://www.w3schools.com/jsref/prop_node_nodetype.asp
+    alert('Node type is ' + exDiv.nodeType);
+    //return value only for text node. For element node return null
+    alert('Node value is ' + exDiv.nodeValue);
+</script>
+</body>
+</html>

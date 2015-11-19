@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Simple example</title>
+    <script>
+        function alertElementById() {
+            var element = document.getElementById('element');
+            alert(element.innerHTML);
+        }
+    </script>
+</head>
+<body>
+<div id="element">
+    <p id="example">
+        Click on button bellow!
+    </p>
+    <button onclick="alertElementById()">Click me</button>
+</div>
+</body>
+</html>

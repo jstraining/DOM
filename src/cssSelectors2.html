@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple example</title>
+</head>
+<body>
+<div id="element">
+    <ul class="list">
+        <li id="first">First</li>
+        <li class="second">Second</li>
+    </ul>
+    <ul class="list">
+        <li>First</li>
+        <li>Second</li>
+    </ul>
+    <script>
+        function alertHtmlColl (coll, selector) {
+            if (coll) {
+                [].forEach.call(coll, function (element) {
+                    alert('Query selectors ' + selector + ' result: ' + element);
+                });
+            }
+        }
+
+        var elem = document.querySelector('ul[class]');
+        if (elem) {
+            alert('Query selector ' + 'ul[class]' + ' result: ' + elem);
+        }
+
+        var allElem = document.querySelectorAll('ul, div');
+        alertHtmlColl(allElem, 'ul, div');
+
+        var oneMoreRes = document.getElementById('element').querySelectorAll('li');
+        alertHtmlColl(oneMoreRes, 'all <li> inside element with id=element');
+    </script>
+</div>
+</body>
+</html>

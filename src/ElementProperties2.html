@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple example</title>
+</head>
+<body>
+<div>
+    <button onclick="addEl('last')">add last</button>
+    <button onclick="addEl('first', exDiv.childNodes[0])">add first</button>
+    <button onclick="removeEl(exDiv.childNodes[0])">remove first</button>
+    <button onclick="removeEl(exDiv.childNodes[exDiv.childNodes.length - 1])">remove last</button>
+    <button onclick="replaceFirst()">replace first</button>
+</div>
+<div id="example">
+    <p>First</p>
+    <p>Second</p>
+    <p>Third</p>
+</div>
+<script>
+    var exDiv = document.getElementById('example');
+
+    function addEl(name, place) {
+        var child = document.createElement('p');
+        child.innerHTML = name;
+        if (place) {
+            exDiv.insertBefore(child, place)
+        } else {
+            exDiv.appendChild(child);
+        }
+    }
+
+    function removeEl (place) {
+        exDiv.removeChild(place);
+    }
+
+    function replaceFirst() {
+        var child = document.createElement('p');
+        child.innerHTML = 'replaced';
+        exDiv.replaceChild(child, exDiv.childNodes[0]);
+    }
+</script>
+</body>
+</html>

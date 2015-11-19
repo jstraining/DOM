@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple example</title>
+</head>
+<body>
+<div id="element">
+    <p id="links">text</p>
+    <script>
+        //example of using addEventListener and activeElement
+        //It is good habit to attach eventListener to element
+        var eventFunc = function () {
+            var element = document.activeElement;
+            element.style.color = 'green';
+        };
+        document.addEventListener('click', eventFunc);
+        //you can also remove listener
+        document.removeEventListener('click', eventFunc);
+        //then you can attach this attribute to an element
+        var attr = document.createAttribute('class');
+        attr.value = 'demoClass';
+        document.getElementById('element').setAttributeNode(attr);
+        //using createElement you can create element and add it to the page
+        var el = document.createElement('p');
+        el.innerHTML = 'createdElement';
+        document.getElementById('element').appendChild(el);
+    </script>
+    </div>
+</body>
+</html>

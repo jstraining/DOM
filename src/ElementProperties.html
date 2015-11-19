@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple example</title>
+</head>
+<body>
+<div id="example">
+    <button id="demo">Some Text</button>
+    <button onclick="createClone()">Clone</button>
+    <button onclick="createFullClone()">Full Clone</button>
+</div>
+<div id="cloned"></div>
+<script>
+    //add and remove Event Listener usage
+    var el = document.getElementById('demo');
+
+    var eventFunc = function () {
+        document.getElementById('demo').innerHTML = parseInt(Math.random() * 1000);
+        el.removeEventListener('click', eventFunc);
+    };
+    el.addEventListener('click', eventFunc);
+
+    //click() just simulate click on element
+    el.addEventListener('mouseover', function () {
+        el.click();
+    });
+    //cloneNode create a copy of element. Has one parameter deep.
+    // If true node and children, otherwise only node
+    function createClone () {document.getElementById('cloned').appendChild(el.cloneNode(false));}
+    function createFullClone () {document.getElementById('cloned').appendChild(el.cloneNode(true));}
+</script>
+
+</body>
+</html>
