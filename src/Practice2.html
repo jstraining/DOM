@@ -9,15 +9,13 @@
         }
     </style>
     <script type="text/javascript">
-        document.onmouseover = function () {
-            var box = document.getElementById('flying-box');
-            box.innerHTML = 'x: ' + event.x + ' y: ' + event.y;
-            box.style.left = (event.x + 10) + 'px';
-            box.style.top = (event.y + 10) + 'px';
-        };
+        function some (event) {
+            event.currentTarget.style.left = (event.x + 10) + 'px';
+            event.currentTarget.style.top = (event.y + 10) + 'px';
+        }
     </script>
 </head>
 <body>
-<div id="flying-box"></div>
+<div id="flying-box" onmouseover="some(event)"></div>
 </body>
 </html>

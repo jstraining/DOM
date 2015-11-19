@@ -1,10 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Title</title>
+    <script>
+        function createBlockWithValue () {
+            var inputText = document.getElementById('value').value;
+            var el = document.getElementById('demo');
+
+            var onClickEl = document.createElement('div');
+            onClickEl.innerHTML = inputText;
+            onClickEl.style.height = '60px';
+            onClickEl.style.cursor = 'pointer';
+            onClickEl.style.width = '250px';
+            onClickEl.style.borderStyle = 'double';
+            onClickEl.style.display = 'inline-block';
+            onClickEl.style.overflow = 'scroll';
+            onClickEl.addEventListener('click', removing);
+            el.appendChild(onClickEl);
+        }
+
+        function removing (e) {
+            var el = document.getElementById('demo');
+            //you can use this to remove current el or e.currentTarget
+            el.removeChild(e.currentTarget);
+        }
+    </script>
 </head>
 <body>
-
+    <div>
+        <input id="value" type="text" value="input some text here">
+        <input type="submit" onclick="createBlockWithValue()">
+    </div>
+    <div id="demo"></div>
 </body>
 </html>
